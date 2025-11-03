@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Advanced Form Validation</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/animations.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color:rgba(21, 99, 178, 0.849) ;">
+    <div class="container">
+      <a class="navbar-brand" href="#" onclick="loadPage('home')">Cognifyz</a>
+      <div>
+        <button class="btn btn-outline-light me-2" onclick="loadPage('home')">Home</button>
+        <button class="btn btn-outline-light" onclick="loadPage('about')">About</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dynamic Content Section -->
+  <main id="content" class="container my-5 fade-in-up">
+    <h3 class="text-center text-primary mb-4">User Registration</h3>
+
+    <% if (error) { %>
+      <div class="alert alert-danger text-center"><%= error %></div>
+    <% } %>
+
+    <form id="registerForm" action="/submit" method="POST" class="p-4 shadow-lg bg-white rounded-4">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" id="username" name="username" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-control" required />
+        <small id="emailFeedback" class="text-danger"></small>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" id="password" name="password" class="form-control" required />
+        <div id="strength" class="mt-2"></div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Register</button>
+    </form>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>

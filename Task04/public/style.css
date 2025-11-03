@@ -1,0 +1,20 @@
+body {
+  background: #f8f9fa;
+}
+
+form {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(75, 143, 211, 0.849);
+}
+
+#strength span {
+  display: inline-block;
+  height: 8px;
+  width: 50px;
+  margin-right: 5px;
+  border-radius: 4px;
+}
