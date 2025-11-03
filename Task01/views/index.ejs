@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Form</title>
+  <style>
+    /* Basic page setup */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Card container */
+    form {
+      background-color: #fff;
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 350px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Heading */
+    h1 {
+      color: #333;
+      margin-bottom: 25px;
+      font-size: 26px;
+    }
+
+    /* Labels */
+    label {
+      display: block;
+      text-align: left;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    /* Input fields */
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-color: #5563DE;
+      box-shadow: 0 0 8px rgba(85, 99, 222, 0.3);
+      outline: none;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #5563DE;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #3949AB;
+      transform: scale(1.05);
+    }
+
+    /* Spacing between fields */
+    br {
+      display: none;
+    }
+
+    /* Smooth animations */
+    * {
+      transition: all 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <form action="/submit" method="POST">
+    <h1>Enter Your Details</h1>
+
+    <label>Username:</label>
+    <input type="text" name="username" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
+

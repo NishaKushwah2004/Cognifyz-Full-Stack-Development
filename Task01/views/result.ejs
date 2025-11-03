@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submission Result</title>
+  <style>
+    /* Page layout */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Card container */
+    .container {
+      background-color: #fff;
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 380px;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    /* Title */
+    h1 {
+      color: #2E3A8C;
+      margin-bottom: 25px;
+      font-size: 26px;
+    }
+
+    /* Text styling */
+    p {
+      font-size: 17px;
+      color: #444;
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    strong {
+      color: #000;
+    }
+
+    /* Link button */
+    a {
+      display: inline-block;
+      margin-top: 25px;
+      text-decoration: none;
+      background-color: #5563DE;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    a:hover {
+      background-color: #3949AB;
+      transform: scale(1.05);
+    }
+
+    /* Smooth fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    * {
+      transition: all 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Form Submitted Successfully!</h1>
+    <p><strong>Username:</strong> <%= username %></p>
+    <p><strong>Email:</strong> <%= email %></p>
+    <a href="/">Go Back</a>
+  </div>
+</body>
+</html>
