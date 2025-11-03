@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cognifyz API Integration</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>👥 User Management (CRUD API)</h2>
+
+    <form id="userForm">
+      <input type="text" id="name" placeholder="Enter Name" required />
+      <input type="email" id="email" placeholder="Enter Email" required />
+      <button type="submit">Add User</button>
+    </form>
+
+    <h3>All Users</h3>
+    <!-- 🔄 Loading Spinner -->
+    <div id="spinner" class="spinner-container">
+      <div class="spinner"></div>
+      <p>Loading users...</p>
+    </div>
+    <ul id="userList"></ul>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
