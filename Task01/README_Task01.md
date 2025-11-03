@@ -36,11 +36,11 @@ Task01/
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the Repository
+### 1️⃣ Navigate to Task 01 Folder
+first open your terminal and move into the Task 01 directory:
 ```bash
-git clone <repository-url>
 cd Task01
-```
+
 
 ### 2️⃣ Install Dependencies
 ```bash
@@ -134,7 +134,7 @@ Installed via `npm install`:
 |----------|--------------|
 | `npm start` | Run the server |
 | `npm run dev` | Run with nodemon |
-| `npm test` | Placeholder for testing |
+
 
 ---
 
