@@ -1,0 +1,24 @@
+.hero-section {
+  background: linear-gradient(to right, #007bff, #6610f2);
+  height: 50vh;
+  color: white;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 40vh;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+}
