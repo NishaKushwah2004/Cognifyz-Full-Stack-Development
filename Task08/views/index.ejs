@@ -1,0 +1,36 @@
+
+
+<section class="hero">
+  <h2><%= subtitle %></h2>
+  <p>Rendered at: <%= time %></p>
+
+  <form id="welcomeForm" method="post" action="/send-welcome">
+    <label>
+      Name
+      <input name="name" required />
+    </label>
+    <label>
+      Email
+      <input name="email" type="email" required />
+    </label>
+    <button type="submit">Send Welcome (enqueue)</button>
+  </form>
+
+  <div id="result"></div>
+</section>
+
+<script>
+  const form = document.getElementById("welcomeForm");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const body = Object.fromEntries(fd.entries());
+    const res = await fetch("/send-welcome", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const json = await res.json();
+    document.getElementById("result").innerText = JSON.stringify(json);
+  });
+</script>
