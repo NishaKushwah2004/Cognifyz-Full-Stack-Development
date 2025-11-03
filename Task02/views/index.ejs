@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration</title>
+  <style>
+    /* Page styling */
+    body {
+      background: linear-gradient(135deg, #6E8EF7, #A777E3);
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Container card */
+    .form-container {
+      background: #ffffff;
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 380px;
+      animation: fadeIn 0.7s ease-in-out;
+    }
+
+    /* Title */
+    h2 {
+      color: #333;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    /* Error message */
+    .error {
+      color: #d63031;
+      background: #ffe6e6;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 15px;
+      box-shadow: 0 0 5px rgba(214, 48, 49, 0.3);
+    }
+
+    /* Labels */
+    label {
+      display: block;
+      text-align: left;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #444;
+      font-size: 15px;
+    }
+
+    /* Input fields */
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      margin-bottom: 18px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #6E8EF7;
+      box-shadow: 0 0 8px rgba(110, 142, 247, 0.4);
+      outline: none;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #6E8EF7;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #4B6EF2;
+      transform: scale(1.05);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Smooth transitions for all elements */
+    * {
+      transition: all 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>User Registration Form</h2>
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+
+    <form action="/submit" method="POST" onsubmit="return validateForm()">
+      <label>Username:</label>
+      <input type="text" id="username" name="username" value="<%= oldData.username || '' %>" required>
+
+      <label>Email:</label>
+      <input type="email" id="email" name="email" value="<%= oldData.email || '' %>" required>
+
+      <label>Age:</label>
+      <input type="number" id="age" name="age" value="<%= oldData.age || '' %>" required>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <!-- Inline JavaScript for Client-Side Validation -->
+  <script>
+    function validateForm() {
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const age = document.getElementById('age').value.trim();
+
+      if (!username || !email || !age) {
+        alert('All fields are required!');
+        return false;
+      }
+
+      if (!/^[a-zA-Z ]+$/.test(username)) {
+        alert('Username must contain only letters and spaces.');
+        return false;
+      }
+
+      
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+
+      if (isNaN(age) || age < 10 || age > 100) {
+        alert('Age must be between 10 and 100.');
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
