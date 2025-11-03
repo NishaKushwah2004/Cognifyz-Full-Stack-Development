@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Profile - Cognifyz Task 07</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #1f2937, #111827);
+      color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-container {
+      background-color: #1e293b;
+      border-radius: 15px;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #facc15;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 8px 0;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+    }
+
+    a:hover {
+      color: #facc15;
+      text-decoration: underline;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin: 15px 0;
+      border: 3px solid #38bdf8;
+    }
+
+    .links {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: #38bdf8;
+      color: #111827;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background: #facc15;
+      color: #1f2937;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h1>👤 GitHub Profile</h1>
+    <img src="<%= profile.avatar_url %>" alt="User Avatar" />
+
+    <h2><%= profile.name || profile.login %></h2>
+
+    <p><strong>Username:</strong> <%= profile.login %></p>
+    <p><strong>Bio:</strong> <%= profile.bio || '—' %></p>
+    <p><strong>Public Repos:</strong> <%= profile.public_repos %></p>
+    <p><strong>Profile URL:</strong> 
+      <a href="<%= profile.html_url %>" target="_blank"><%= profile.html_url %></a>
+    </p>
+
+    <div class="links">
+      <a class="btn" href="/api/github/repos">📁 View Repositories (JSON)</a>
+      <a class="btn" href="/">🏠 Back Home</a>
+    </div>
+  </div>
+</body>
+</html>
