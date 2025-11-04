@@ -1,7 +1,7 @@
 # Cognifyz Technologies Full Stack Development Internship Tasks
 
 ## Internship Duration
-October 5, 2023 - November 5, 2023
+October 5, 2025 - November 5, 2025
 
 ## Overview
 This repository contains all the tasks completed during my Full Stack Development Internship at Cognifyz Technologies. The projects demonstrate progressive learning and implementation of various web development technologies and concepts.
