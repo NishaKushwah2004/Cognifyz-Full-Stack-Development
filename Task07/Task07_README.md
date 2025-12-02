@@ -44,40 +44,62 @@ It utilizes **OAuth-based authentication via GitHub** and includes **API rate li
 
 ## ⚙️ Setup & Installation  
 
-1. Clone this repository to your local machine:  
-   ```bash
-   git clone https://github.com/NishaKushwah2004/Cognifyz-Full-Stack-Development.git
-   ```
-2. Navigate to the project folder:  
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (optional, for user data storage)
+- GitHub account (for OAuth setup)
+
+### Steps
+
+1. **Navigate to the project folder**:  
    ```bash
    cd Task07
    ```
-3. Install dependencies:  
+
+2. **Install dependencies**:  
    ```bash
    npm install
    ```
-4. Create a `.env` file using `.env.example` and fill in the required values (GitHub OAuth credentials, session secret, etc.).  
-5. Start the development server:  
+
+3. **Set up GitHub OAuth**:
+   - Go to [GitHub Developer Settings](https://github.com/settings/developers)
+   - Create a new OAuth App
+   - Set Authorization callback URL to: `http://localhost:3000/auth/github/callback`
+   - Copy the Client ID and Client Secret
+
+4. **Configure environment variables**:
+   Create a `.env` file using `.env.example` and fill in the required values:
+   ```env
+   PORT=3000
+   GITHUB_CLIENT_ID=your_github_client_id
+   GITHUB_CLIENT_SECRET=your_github_client_secret
+   SESSION_SECRET=your_random_session_secret
+   ```
+
+5. **Start the development server**:  
    ```bash
    npm run dev
    ```
-6. Open the app in your browser:  
-   👉 [http://localhost:3000](http://localhost:3000)  
-7. Log in with your GitHub account to test OAuth and API integration.
+
+6. **Access the application**:  
+   Open your browser and visit: 👉 [http://localhost:3000](http://localhost:3000)
+
+7. **Test OAuth integration**:  
+   Click "Login with GitHub" to test OAuth authentication and API integration.
 
 ---
 
-## 🧰 Tech Stack  
+## 🛠️ Tech Stack  
 
 | Component | Technology |
 |------------|-------------|
 | **Backend** | Node.js, Express.js |
-| **View Engine** | EJS |
-| **Authentication** | Passport.js (GitHub Strategy) |
+| **View Engine** | EJS (Embedded JavaScript Templates) |
+| **Authentication** | Passport.js (GitHub OAuth Strategy) |
 | **Database (optional)** | MongoDB |
 | **Security & Middleware** | express-session, express-rate-limit, dotenv |
 | **API Handling** | Axios, p-retry |
-| **Development** | Nodemon |
+| **Development** | Nodemon (auto-reload) |
 
 ---
 
@@ -94,16 +116,29 @@ It utilizes **OAuth-based authentication via GitHub** and includes **API rate li
 
 ---
 
-## 🧑‍💻 Author  
-**Cognifyz Internship Program — Task 07 (Advanced API Usage and External API Integration)**
+## 📚 Learning Outcomes
+
+- Implementation of **OAuth 2.0 authentication** flow with GitHub
+- Integration with **external REST APIs** (GitHub API)
+- Understanding **API rate limiting** for security and abuse prevention
+- Implementation of **retry mechanisms** for failed API requests
+- **Centralized error handling** for better user experience
+- **Session management** with secure cookies
+- Working with **Passport.js** for authentication strategies
+
+---
+
+## 👩‍💻 Author
+
 **Nisha Kushwah**  
-B.Tech in Computer Science & Engineering  
-Jabalpur Engineering College  
+**B.Tech in Computer Science & Engineering**  
+**Jabalpur Engineering College**
 
 📧 [2004nishakushwah@gmail.com](mailto:2004nishakushwah@gmail.com)  
 🌐 [GitHub Profile](https://github.com/NishaKushwah2004)
 
 ---
-_Where Data Meets Intelligence_
+
+> *"Where Data Meets Intelligence — Cognifyz"*
 
 

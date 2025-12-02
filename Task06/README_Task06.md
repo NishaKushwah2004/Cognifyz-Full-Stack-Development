@@ -1,6 +1,6 @@
 # 🧩 Task 6: Database Integration and User Authentication
 
-## 🎯 Overview
+## 🎯 Objective
 This task focuses on integrating a **MongoDB database** and implementing a **secure user authentication system** with **JWT** and **bcrypt**.  
 The application ensures **safe data handling**, **authorization**, and a seamless login/register flow with protected routes.
 
@@ -19,14 +19,16 @@ The application ensures **safe data handling**, **authorization**, and a seamles
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Structure
 
 ```
 Task06/
 │
 ├── package.json
+├── package-lock.json
 ├── server.js
-├── db.js
+├── config/
+│   └── db.js
 │
 ├── models/
 │   ├── User.js
@@ -49,7 +51,7 @@ Task06/
 │   ├── login.ejs
 │   └── dashboard.ejs
 │
-└── .env
+└── .env (create from .env.example)
 ```
 
 ---
@@ -57,7 +59,7 @@ Task06/
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Navigate to the Task Folder
-If you have all tasks inside a main repository (for example, `Cognifyz-Tasks`):
+Open your terminal and navigate to the Task06 directory:
 ```bash
 cd Task06
 ```
@@ -69,14 +71,19 @@ npm install
 ```
 
 ### 3️⃣ Configure Environment Variables
-Create a `.env` file in the root directory and add:
-```
+Create a `.env` file in the root directory and add the following configuration:
+```env
 PORT=3000
 MONGO_URI=mongodb://localhost:27017/Task06DB
 JWT_SECRET=replace_with_a_long_random_string
 JWT_EXPIRES_IN=7d
 BCRYPT_SALT_ROUNDS=10
 ```
+
+**Important Notes:**
+- Replace `replace_with_a_long_random_string` with a secure, random string for JWT_SECRET
+- Ensure MongoDB is running on your system before starting the server
+- The database will be created automatically if it doesn't exist
 
 ### 4️⃣ Start the Server
 Run the application:
@@ -110,44 +117,25 @@ http://localhost:3000
 
 ## 🔐 How It Works
 
-### 🧩 1. User Registration
-- Users register through `register.ejs` form.  
-- Passwords are hashed using `bcrypt` before saving in MongoDB.  
-- On success, users are redirected to the login page.
+### 🧩 1. User Registration (`/api/auth/register`)
+- Users register through the `register.ejs` form
+- Passwords are hashed using `bcrypt` before saving in MongoDB
+- On success, users are redirected to the login page
 
-### 🧩 2. User Login
-- Credentials are verified via `auth.js` route.  
-- A JWT token is generated and stored in a secure **HTTP-only cookie**.  
-- The token is used for authorizing access to protected pages.
+### 🧩 2. User Login (`/api/auth/login`)
+- Credentials are verified against MongoDB
+- On success, a JWT token is generated and stored in a secure **HTTP-only cookie**
+- The token is used for authorizing access to protected pages
 
-### 🧩 3. Protected Dashboard
-- The middleware (`auth.js`) validates JWT tokens before rendering the dashboard.  
-- Unauthorized users are redirected to the login page.
+### 🧩 3. Protected Dashboard (`/dashboard`)
+- Access restricted to users with a valid JWT
+- The middleware (`middleware/auth.js`) validates JWT tokens before rendering the dashboard
+- Unauthorized users are redirected to the login page
 
-### 🧩 4. Form Management
-- Logged-in users can create, view, and manage forms linked to their account.  
-- Each form entry is stored in MongoDB using the `FormEntry` model.
-
----
-
-## 🧩 How It Works
-
-1. **User Registration** (`/api/auth/register`):  
-   - User enters name, email, and password.  
-   - Password is hashed using bcrypt.  
-   - New user is stored in MongoDB.  
-
-2. **User Login** (`/api/auth/login`):  
-   - Credentials are verified against MongoDB.  
-   - On success, a JWT token is generated and stored in a secure cookie.  
-
-3. **Protected Dashboard** (`/dashboard`):  
-   - Access restricted to users with a valid JWT.  
-   - Middleware verifies token before rendering user data.  
-
-4. **Form Management API** (`/api/forms`):  
-   - Authenticated users can create, read, and delete form entries.  
-   - Each form is associated with the logged-in user.  
+### 🧩 4. Form Management API (`/api/forms`)
+- Authenticated users can create, read, and delete form entries
+- Each form entry is stored in MongoDB using the `FormEntry` model
+- Forms are associated with the logged-in user's account  
 
 ---
 

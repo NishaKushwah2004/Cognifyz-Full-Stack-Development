@@ -37,9 +37,10 @@ Task01/
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Navigate to Task 01 Folder
-first open your terminal and move into the Task 01 directory:
+First, open your terminal and move into the Task 01 directory:
 ```bash
 cd Task01
+```
 
 
 ### 2️⃣ Install Dependencies
@@ -133,8 +134,7 @@ Installed via `npm install`:
 | Command | Description |
 |----------|--------------|
 | `npm start` | Run the server |
-| `npm run dev` | Run with nodemon |
-
+| `npm run dev` | Run with nodemon (auto-reload on file changes) |
 
 ---
 

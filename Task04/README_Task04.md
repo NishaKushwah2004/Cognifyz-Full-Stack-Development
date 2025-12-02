@@ -38,7 +38,7 @@ Task04/
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Navigate to Task 04 Folder
-open your terminal and move into the Task 04 directory:
+Open your terminal and move into the Task 04 directory:
 ```bash
 cd Task04
 ```

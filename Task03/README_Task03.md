@@ -37,8 +37,8 @@ Task03/
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Navigate to Task 03 Folder 
-open your terminal and move into the Task 03 directory:
+### 1️⃣ Navigate to Task 03 Folder
+Open your terminal and move into the Task 03 directory:
 ```bash
 cd Task03
 ```

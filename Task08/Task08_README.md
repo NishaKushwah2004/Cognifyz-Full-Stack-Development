@@ -58,38 +58,54 @@ Ensure you have the following installed:
 - Redis (running locally or hosted)  
 - npm or yarn  
 
-### 🛠 Steps  
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/NishaKushwah2004/Cognifyz-Full-Stack-Development.git
-   ```
-2. Navigate to the project folder:  
+### 🛠️ Steps  
+
+1. **Navigate to the project folder**:  
    ```bash
    cd Task08
    ```
-3. Install dependencies:  
+
+2. **Install dependencies**:  
    ```bash
    npm install
    ```
-4. Start Redis (if local):  
+
+3. **Start Redis** (if running locally):  
    ```bash
    redis-server
    ```
-5. Create a `.env` file from the `.env.example` and fill required details.  
-6. Start the background worker:  
+   
+   **Note**: If Redis is not installed, download it from [redis.io](https://redis.io/download) or use a cloud Redis service.
+
+4. **Configure environment variables**:  
+   Create a `.env` file from `.env.example` and fill in the required details:
+   ```env
+   PORT=3000
+   REDIS_URL=redis://127.0.0.1:6379
+   REDIS_HOST=127.0.0.1
+   REDIS_PORT=6379
+   ETHEREAL_USER=your_ethereal_user
+   ETHEREAL_PASS=your_ethereal_password
+   ```
+   
+   **Note**: For Ethereal email testing, you can generate credentials at [ethereal.email](https://ethereal.email/)
+
+5. **Start the background worker** (in a separate terminal):  
    ```bash
    npm run worker
    ```
-7. Start the server:  
+
+6. **Start the development server** (in another terminal):  
    ```bash
    npm run dev
    ```
-8. Open your browser and go to:  
-   👉 [http://localhost:3000](http://localhost:3000)
+
+7. **Access the application**:  
+   Open your browser and visit: 👉 [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🧰 Tech Stack  
+## 🛠️ Tech Stack  
 
 | Component | Technology |
 |------------|-------------|
@@ -100,18 +116,22 @@ Ensure you have the following installed:
 | **Email Service** | Nodemailer (Ethereal SMTP for testing) |
 | **Security Middleware** | Helmet, Compression |
 | **Logging** | Morgan and Custom Logger |
+| **Environment Variables** | dotenv |
 
 ---
 
-## 🧩 Example `.env` Configuration  
-```env
-PORT=3000
-REDIS_URL=redis://127.0.0.1:6379
-REDIS_HOST=127.0.0.1
-REDIS_PORT=6379
-ETHEREAL_USER=your_ethereal_user
-ETHEREAL_PASS=your_ethereal_password
-```
+## 📝 Environment Variables
+
+The `.env` file should contain the following variables:
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `PORT` | Server port number | `3000` |
+| `REDIS_URL` | Redis connection URL | `redis://127.0.0.1:6379` |
+| `REDIS_HOST` | Redis host address | `127.0.0.1` |
+| `REDIS_PORT` | Redis port number | `6379` |
+| `ETHEREAL_USER` | Ethereal email username | Generated at ethereal.email |
+| `ETHEREAL_PASS` | Ethereal email password | Generated at ethereal.email |
 
 ---
 
@@ -144,24 +164,37 @@ The frontend uses **EJS templating** with modular partials for maintainability.
 
 ---
 
-## 👨‍💻 Scripts  
+## 📚 Learning Outcomes
 
-| Command | Description |
-|----------|-------------|
-| `npm run dev` | Starts the development server |
-| `npm start` | Runs the server in production mode |
-| `npm run worker` | Starts the background job worker |
+- Implementation of **custom middleware** for request logging and error handling
+- Understanding **background job processing** with Bull Queue and Redis
+- Server-side **caching strategies** for performance optimization
+- **Security enhancements** using Helmet and Compression middleware
+- Working with **EJS layouts and partials** for modular templating
+- **Email service integration** using Nodemailer
+- **Redis integration** for caching and job queue management
 
 ---
 
-## 🧑‍💻 Author  
-**Cognifyz Internship Program — Task 08 (Advanced Server-Side Functionality)**  
+## 🧩 Scripts (from `package.json`)
+
+| Command | Description |
+|----------|-------------|
+| `npm run dev` | Starts the development server with auto-reload |
+| `npm start` | Runs the server in production mode |
+| `npm run worker` | Starts the background job worker (run in separate terminal) |
+
+---
+
+## 👩‍💻 Author
+
 **Nisha Kushwah**  
-B.Tech in Computer Science & Engineering  
-Jabalpur Engineering College  
+**B.Tech in Computer Science & Engineering**  
+**Jabalpur Engineering College**
 
 📧 [2004nishakushwah@gmail.com](mailto:2004nishakushwah@gmail.com)  
 🌐 [GitHub Profile](https://github.com/NishaKushwah2004)
 
 ---
-_Where Data Meets Intelligence_
+
+> *"Where Data Meets Intelligence — Cognifyz"*

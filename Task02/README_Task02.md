@@ -36,8 +36,8 @@ Task02/
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Navigate to Task 02 Folder 
-open your terminal and move into the Task 02 directory:
+### 1️⃣ Navigate to Task 02 Folder
+Open your terminal and move into the Task 02 directory:
 ```bash
 cd Task02
 ```
